@@ -5,7 +5,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.js",
+    "start": "nodemon  src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -14,11 +14,11 @@
   "author": "usama",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "mongoose": "^8.3.5"
   },
   "devDependencies": {
-    "dotenv": "^16.4.5",
     "nodemon": "^3.1.0",
     "prettier": "^3.2.5"
   }
