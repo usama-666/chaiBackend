@@ -41,7 +41,6 @@ const userSchema = new Schema(
     },
     refreshToken: {
       type: String,
-      required: true,
     },
   },
   { timestamps: true }
@@ -49,7 +48,7 @@ const userSchema = new Schema(
 
 userSchema.pre("save", async function (next) {
   //now to avoid hashing every time when storing data in model we use following check
-  if (!userSchema.isModified("password")) return next()
+  if (!this.isModified("password")) return next()
   this.password = bcrypt.hash(this.password, 10)
   next()
 })
