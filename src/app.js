@@ -34,7 +34,7 @@ import userRoutes from "./routes/user.route.js"
 app.use("/api/v1/users", userRoutes)
 
 app.get("/", (req, res) => {
-  res.send("Server is running ")
+  res.send(`Server is running at ::  ${process.env.PORT} `)
 })
 app.get("/we", (req, res) => {
   console.log("working get request")

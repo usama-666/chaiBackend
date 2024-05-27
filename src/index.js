@@ -1,5 +1,7 @@
 import dotenv from "dotenv"
 import connectDB from "./db/index.js"
+import { v2 as cloudinary } from "cloudinary"
+
 import { app } from "./app.js"
 
 dotenv.config()
@@ -7,6 +9,16 @@ dotenv.config()
 //   path: "./.env",
 // })
 
+//cloudinary configuration
+
+// Cloudinary configuration
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+})
+
+//connectingDB
 connectDB()
   .then(() => {
     app.listen(process.env.PORT || 8000, () => {
